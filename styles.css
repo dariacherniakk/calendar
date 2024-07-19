@@ -1,0 +1,204 @@
+body {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    color: #2f2f2e;
+    padding: 20px;
+}
+
+.input-container {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 5px;
+}
+
+.input-container input,
+.input-container select {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    color: #2f2f2e;
+    padding: 10px 15px;
+    border-radius: 7px;
+    border: 1px solid #ebebeb;
+    width: calc(50% - 2.5px);
+    box-sizing: border-box;
+}
+
+.calendar-container {
+    display: none;
+    justify-content: center;
+    position: absolute;
+    z-index: 10;
+    background-color: white;
+    padding: 10px;
+    border-radius: 7px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-container * {
+    margin: 0;
+    padding: 0;
+    font-family: 'Geologica', sans-serif;
+}
+
+.calendar {
+    background: rgba(255, 255, 255, 1);
+    width: 450px;
+    border-radius: 7px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.calendar header {
+    display: flex;
+    align-items: center;
+    padding: 20px 30px 10px;
+    justify-content: space-between;
+}
+
+.calendar header .calendar-navigation {
+    display: flex;
+}
+
+.calendar header .calendar-navigation span {
+    height: 38px;
+    width: 38px;
+    margin: 0 1px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 38px;
+    border-radius: 50%;
+    user-select: none;
+    color: #aebaeb;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.calendar header .calendar-navigation span.disabled {
+    cursor: not-allowed;
+    color: #ddd;
+}
+
+.calendar header .calendar-navigation span:last-child {
+    margin-right: -10px;
+}
+
+.calendar header .calendar-navigation span:hover:not(.disabled) {
+    background: #f2f2f2;
+}
+
+.calendar header .calendar-current-date {
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.calendar .calendar-body {
+    padding: 20px;
+}
+
+.calendar .calendar-body ul {
+    list-style: none;
+    flex-wrap: wrap;
+    display: flex;
+    text-align: center;
+}
+
+.calendar .calendar-body .calendar-dates {
+    margin-bottom: 15px;
+}
+
+.calendar .calendar-body li {
+    width: calc(100% / 7);
+    font-size: 12px;
+    color: #545454;
+}
+
+.calendar .calendar-body .calendar-weekdays li {
+    cursor: default;
+    font-weight: 500;
+}
+
+.calendar .calendar-dates li {
+    margin-top: 25px;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.calendar .calendar-dates li.inactive {
+    color: #aaa;
+    background: none;
+    cursor: not-allowed;
+}
+
+.calendar .calendar-dates li.inactive::before {
+    background: #f2f2f2;
+}
+
+.calendar .calendar-dates li.active {
+    color: #fff;
+}
+
+.calendar .calendar-dates li::before {
+    position: absolute;
+    content: "";
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.calendar .calendar-dates li.today::before {
+    background: lightgrey;
+}
+
+.calendar .calendar-dates li.active::before {
+    background: #000000;
+}
+
+.calendar .calendar-dates li:not(.active):hover::before {
+    background: #EBEBEB;
+}
+
+.dropdown-container {
+    position: relative;
+    display: inline-block;
+    width: calc(50% - 2.5px);
+}
+
+#time-input {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#time-input-dropdown {
+    display: none;
+    position: absolute;
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    max-height: 150px;
+    overflow-y: auto;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #ebebeb;
+    border-radius: 7px;
+}
+
+#time-input-dropdown div {
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+#time-input-dropdown div:hover {
+    background-color: #f2f2f2;
+}
+
+.selected-date {
+    font-size: 16px;
+    font-weight: 500;
+}
