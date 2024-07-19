@@ -4,6 +4,7 @@ body {
     color: #2f2f2e;
     padding: 20px;
     position: relative; /* Ensure the body allows positioned elements to overflow */
+    overflow: visible; /* Ensure body allows overflow */
 }
 
 .input-container {
@@ -11,6 +12,7 @@ body {
     display: flex;
     gap: 5px;
     position: relative; /* Make sure the input container is a positioned element */
+    overflow: visible; /* Ensure input container allows overflow */
 }
 
 .input-container input,
@@ -21,7 +23,7 @@ body {
     padding: 10px 15px;
     border-radius: 7px;
     border: 1px solid #ebebeb;
-    width: calc(50% - 2.5px);
+    width: 150px;
     box-sizing: border-box;
 }
 
@@ -31,9 +33,8 @@ body {
     position: absolute;
     z-index: 1000; /* Higher z-index to ensure it appears above other elements */
     background-color: white;
-    padding: 10px;
     border-radius: 7px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: visible; /* Ensure calendar container allows overflow */
 }
 
 .calendar-container * {
@@ -44,17 +45,17 @@ body {
 
 .calendar {
     background: rgba(255, 255, 255, 1);
-    width: 450px;
+    width: 250px;
     border-radius: 7px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
 }
 
 .calendar header {
     display: flex;
     align-items: center;
-    padding: 20px 30px 10px;
+    padding: 10px 20px 0px;
     justify-content: space-between;
+    
 }
 
 .calendar header .calendar-navigation {
@@ -62,16 +63,16 @@ body {
 }
 
 .calendar header .calendar-navigation span {
-    height: 38px;
+    height: 30px;
     width: 38px;
     margin: 0 1px;
     cursor: pointer;
     text-align: center;
-    line-height: 38px;
+    line-height: 30px;
     border-radius: 50%;
     user-select: none;
     color: #aebaeb;
-    font-size: 12px;
+    font-size: 14px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -92,11 +93,11 @@ body {
 
 .calendar header .calendar-current-date {
     font-weight: 500;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 .calendar .calendar-body {
-    padding: 20px;
+    padding: 10px;
 }
 
 .calendar .calendar-body ul {
@@ -107,7 +108,7 @@ body {
 }
 
 .calendar .calendar-body .calendar-dates {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 .calendar .calendar-body li {
@@ -122,7 +123,7 @@ body {
 }
 
 .calendar .calendar-dates li {
-    margin-top: 25px;
+    margin-top: 20px;
     position: relative;
     z-index: 1;
     cursor: pointer;
@@ -170,6 +171,7 @@ body {
     position: relative;
     display: inline-block;
     width: calc(50% - 2.5px);
+    overflow: visible; /* Ensure dropdown container allows overflow */
 }
 
 #time-input {
